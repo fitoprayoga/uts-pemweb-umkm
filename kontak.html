@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami | MountainGear</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root { 
+            --primary-dark: #1b3022; 
+            --accent-orange: #f39c12;
+            --bg-light: #f4f7f6;
+        }
+        body { background-color: var(--bg-light); font-family: 'Segoe UI', sans-serif; }
+        .navbar { background-color: var(--primary-dark) !important; }
+        
+        .contact-card { border: none; border-radius: 15px; transition: 0.3s; }
+        .contact-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; }
+        .icon-box { width: 50px; height: 50px; background: #e8f5e9; color: #2d5a27; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 1.5rem; }
+        
+        .btn-warning { background-color: var(--accent-orange); border: none; color: white; }
+        .btn-warning:hover { background-color: #d35400; color: white; }
+        
+        /* Floating WA Button */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+            animation: pulse-wa 2s infinite;
+        }
+        .floating-wa:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+        @keyframes pulse-wa {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        footer { background-color: var(--primary-dark); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">MOUNTAIN<span class="text-warning">GEAR</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="katalog.html">Katalog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Sewa Sekarang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="data-booking.html">Data Pesanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="py-5 text-white text-center" style="background: linear-gradient(rgba(27, 48, 34, 0.8), rgba(27, 48, 34, 0.8)), url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1350&q=80') center/cover;">
+        <div class="container" data-aos="zoom-in">
+            <h2 class="display-5 fw-bold text-uppercase">Hubungi Kami</h2>
+            <p class="lead opacity-75">Punya pertanyaan? Kami siap membantu petualanganmu.</p>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row g-5">
+            
+            <div class="col-lg-5" data-aos="fade-right">
+                
+                <div class="row g-3 mb-5">
+                    <div class="col-12">
+                        <div class="card contact-card shadow-sm p-3">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-stat icon-box me-3"><i class="bi bi-geo-alt-fill"></i></div>
+                                <div>
+                                    <h6 class="mb-1 fw-bold">Lokasi Basecamp</h6>
+                                    <p class="mb-0 small text-muted">Jl. Raya Rungkut No. 123, Surabaya</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card contact-card shadow-sm p-3">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-stat icon-box me-3 bg-warning bg-opacity-25 text-warning"><i class="bi bi-clock-history"></i></div>
+                                <div>
+                                    <h6 class="mb-1 fw-bold">Jam Operasional</h6>
+                                    <p class="mb-0 small text-muted">Setiap Hari: 08.00 - 21.00 WIB</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0 rounded-4 p-4">
+                    <h5 class="fw-bold mb-4">Kirim Pesan Langsung</h5>
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-muted">Nama Anda</label>
+                            <input type="text" class="form-control bg-light" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-muted">Email Anda</label>
+                            <input type="email" class="form-control bg-light" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold text-muted">Pesan</label>
+                            <textarea class="form-control bg-light" rows="4" placeholder="Tulis pertanyaanmu di sini..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100 fw-bold shadow-sm">Kirim Pesan <i class="bi bi-send ms-2"></i></button>
+                    </form>
+                    
+                    <div id="successAlert" class="alert alert-success mt-3" style="display: none;" role="alert">
+                        <i class="bi bi-check-circle-fill me-2"></i>Pesan berhasil terkirim! Admin akan segera membalas.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7" data-aos="fade-left">
+                
+                <div class="rounded-4 overflow-hidden shadow-sm mb-5 border" style="height: 350px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126646.20961314945!2d112.63028163583984!3d-7.275614126786807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbf838184353%3A0x67d4f72c3664d50c!2sSurabaya%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+
+                <h5 class="fw-bold mb-3"><i class="bi bi-question-circle-fill text-success me-2"></i>Pertanyaan yang Sering Diajukan</h5>
+                <div class="accordion shadow-sm rounded-4 overflow-hidden" id="accordionFAQ">
+                    
+                    <div class="accordion-item border-0 border-bottom">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                Apakah syarat wajib untuk menyewa alat?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body text-muted small">
+                                Syarat utamanya adalah meninggalkan kartu identitas asli (E-KTP / SIM / KTM) yang masih berlaku. Kartu akan dikembalikan saat seluruh alat dikembalikan dalam kondisi baik.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 border-bottom">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                Bagaimana jika alat mengalami kerusakan atau hilang?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body text-muted small">
+                                Penyewa wajib mengganti biaya perbaikan atau mengganti dengan barang baru yang sejenis jika alat tersebut hilang atau rusak berat.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                Apakah ada denda keterlambatan?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body text-muted small">
+                                Ya, denda keterlambatan dihitung sama dengan biaya sewa alat tersebut per harinya.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <a href="https://wa.me/6281554364729" target="_blank" class="floating-wa" title="Chat via WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <footer class="py-4 mt-auto text-center border-top border-secondary">
+        <p class="mb-0 opacity-75">&copy; 2026 UTS Pemrograman Web - MountainGear Rental</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // JS Simulasi Form Kirim Pesan
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Mencegah web reload
+            const form = this;
+            const btn = form.querySelector('button');
+            const alert = document.getElementById('successAlert');
+
+            // Efek Loading di tombol
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Mengirim...';
+            btn.disabled = true;
+
+            // Simulasi proses pengiriman 1,5 detik
+            setTimeout(() => {
+                form.reset(); // Kosongkan form
+                btn.innerHTML = 'Kirim Pesan <i class="bi bi-send ms-2"></i>';
+                btn.disabled = false;
+                
+                // Munculkan notifikasi sukses
+                alert.style.display = 'block';
+                
+                // Hilangkan notifikasi setelah 5 detik
+                setTimeout(() => {
+                    alert.style.display = 'none';
+                }, 5000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

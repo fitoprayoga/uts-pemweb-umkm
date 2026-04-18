@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Sewa | MountainGear</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #1b3022;
+            --accent-orange: #f39c12;
+            --bg-light: #f8f9fa;
+        }
+        body { background-color: var(--bg-light); font-family: 'Segoe UI', sans-serif; }
+        .navbar { background-color: var(--primary-dark) !important; }
+        .btn-warning { background-color: var(--accent-orange); border: none; color: white; transition: 0.3s; }
+        .btn-warning:hover { background-color: #d35400; color: white; transform: translateY(-2px); }
+        .card-header { background-color: var(--primary-dark) !important; }
+        
+        /* Custom Stepper */
+        .stepper { display: flex; justify-content: center; margin-bottom: 2rem; }
+        .step { text-align: center; position: relative; width: 100px; }
+        .step-circle { width: 40px; height: 40px; border-radius: 50%; background-color: #e9ecef; color: #6c757d; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-weight: bold; z-index: 2; position: relative; }
+        .step.active .step-circle { background-color: var(--accent-orange); color: white; box-shadow: 0 0 0 5px rgba(243, 156, 18, 0.2); }
+        .step:not(:last-child)::after { content: ''; position: absolute; top: 20px; left: 50%; width: 100%; height: 3px; background-color: #e9ecef; z-index: 1; }
+        .step.active:not(:last-child)::after { background-color: var(--accent-orange); }
+        
+        footer { background-color: var(--primary-dark); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">MOUNTAIN<span class="text-warning">GEAR</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="katalog.html">Katalog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="booking.html">Sewa Sekarang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="data-booking.html">Data Pesanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="py-5 text-white text-center" style="background: linear-gradient(rgba(27, 48, 34, 0.8), rgba(27, 48, 34, 0.8)), url('img/6.jpg') center/cover;">
+        <div class="container" data-aos="zoom-in">
+            <h2 class="display-5 fw-bold">Booking Alat Gunung</h2>
+            <p class="lead opacity-75">Lengkapi data di bawah ini untuk memulai petualanganmu.</p>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        
+        <div class="stepper" data-aos="fade-down">
+            <div class="step active">
+                <div class="step-circle"><i class="bi bi-pencil-square"></i></div>
+                <small class="fw-bold">Isi Data</small>
+            </div>
+            <div class="step">
+                <div class="step-circle"><i class="bi bi-check-circle"></i></div>
+                <small class="text-muted">Konfirmasi</small>
+            </div>
+            <div class="step">
+                <div class="step-circle"><i class="bi bi-bag-check"></i></div>
+                <small class="text-muted">Ambil Alat</small>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-8" data-aos="fade-right">
+                <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+                    <div class="card-header py-3 bg-dark text-white">
+                        <h5 class="mb-0 fw-bold"><i class="bi bi-card-text me-2"></i>Formulir Penyewaan</h5>
+                    </div>
+                    <div class="card-body p-4 p-md-5">
+                        <form action="data-booking.html" method="GET">
+                            
+                            <h6 class="fw-bold text-success mb-3 border-bottom pb-2">1. Data Pemesan</h6>
+                            <div class="row mb-4">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label class="form-label text-muted small fw-bold">Nama Lengkap Sesuai KTP</label>
+                                    <input type="text" class="form-control bg-light" placeholder="Contoh: Budi Santoso" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted small fw-bold">Nomor WhatsApp Aktif</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light">+62</span>
+                                        <input type="tel" class="form-control bg-light" placeholder="81234567890" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h6 class="fw-bold text-success mb-3 border-bottom pb-2">2. Detail Penyewaan</h6>
+                            <div class="mb-3">
+                                <label class="form-label text-muted small fw-bold">Pilih Perlengkapan Utama</label>
+                                <select class="form-select bg-light" id="alat-select" required>
+                                    <option value="0" selected disabled>-- Klik untuk pilih alat --</option>
+                                    <option value="55000">Tenda Kapasitas 4 Orang | Tendaki Borneo (Rp 55.000/hari)</option>
+                                    <option value="55000">Tenda Kapasitas 2 Orang | Quechua MH100 (Rp 55.000/hari)</option>
+                                    <option value="60000">Tenda Kapasitas 4 Orang | Raya 4 Pro (Rp 60.000/hari)</option>
+                                    <option value="75000">Tenda Kapasitas 4 Orang | Wildshell Jayadipa 4P (Rp 75.000/hari)</option>
+                                    <option value="10000">Pasak Tenda (Rp 10.000/hari)</option>
+                                    <option value="35000">Carrier Consina Everest 60L (Rp 35.000/hari)</option>
+                                    <option value="35000">Carrier Eiger Rhinos 60L (Rp 35.000/hari)</option>
+                                    <option value="30000">Carrier Avtech Panthera 60L (Rp 30.000/hari)</option>
+                                    <option value="30000">Carrier Arei Atmos 60L (Rp 30.000/hari)</option>
+                                    <option value="10000">(Jual) Kaleng Gas Portable (Rp 10.000/item)</option>
+                                    <option value="10000">Nesting 2 Susun (Rp 10.000/hari)</option>
+                                    <option value="20000">Nesting Set (Rp 20.000/hari)</option>
+                                    <option value="15000">Nesting TNI (Rp 15.000/hari)</option>
+                                    <option value="10000">Kompor Portable (Rp 10.000/hari)</option>
+                                    <option value="8000">Sleeping Bag Polar (Rp 8.000/hari)</option>
+                                    <option value="5000">Matras Camping (Rp 5.000/hari)</option>
+                                    <option value="8000">Matras Camping Lipat (Rp 8.000/hari)</option>
+                                    <option value="15000">Hammock Double Layer (Rp 15.000/hari)</option>
+                                    <option value="25000">Hydropack Trail Run (Rp 25.000/hari)</option>
+                                    <option value="15000">Tracking Pole (Rp 15.000/hari)</option>
+                                    <option value="20000">Tracking Pole Lipat (Rp 20.000/hari)</option>
+                                    <option value="10000">(Jual) Emergency Blanket (Rp 10.000/item)</option>
+                                    <option value="10000">Headlamp (Rp 10.000/hari)</option>
+                                    <option value="15000">Lampu Tenda (Rp 15.000/hari)</option>
+                                    <option value="20000">Flysheet 3x4 (Rp 20.000/hari)</option>
+                                    <option value="10000">Tiang Flysheet (Rp 10.000/hari)</option>
+                                    <option value="15000">Meja Lipat (Rp 15.000/hari)</option>
+                                    <option value="15000">Lampu Tenda (Rp 15.000/hari)</option>
+                                    <option value="35000">Sepatu Gunung Eiger Tarantula Size 40-41 (Rp 35.000/hari)</option>
+                                    <option value="35000">Sepatu Gunung Treksta Size 38-39 (Rp 35.000/hari)</option>
+                                    <option value="35000">Sepatu Gunung Mountia Size 42 (Rp 35.000/hari)</option>
+                                    <option value="20000">Sepatu Boots Size 41-43 (Rp 20.000/hari)</option>
+                                </select>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label class="form-label text-muted small fw-bold">Tanggal Pengambilan</label>
+                                    <input type="date" class="form-control bg-light" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted small fw-bold">Durasi Sewa (Hari)</label>
+                                    <input type="number" class="form-control bg-light" id="durasi-input" min="1" max="14" placeholder="0" required>
+                                </div>
+                            </div>
+
+                            <h6 class="fw-bold text-success mb-3 border-bottom pb-2">3. Persyaratan Tambahan</h6>
+                            <div class="mb-4">
+                                <label class="form-label text-muted small fw-bold d-block">Pilih Kartu Jaminan (Diserahkan saat ambil barang)</label>
+                                <div class="btn-group w-100" role="group">
+                                    <input type="radio" class="btn-check" name="jaminan" id="ktp" autocomplete="off" checked>
+                                    <label class="btn btn-outline-success" for="ktp">E-KTP</label>
+
+                                    <input type="radio" class="btn-check" name="jaminan" id="sim" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="sim">SIM</label>
+
+                                    <input type="radio" class="btn-check" name="jaminan" id="ktm" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="ktm">KTM (Mahasiswa)</label>
+                                </div>
+                            </div>
+
+                            <div class="d-grid mt-5">
+                                <button type="submit" class="btn btn-warning btn-lg fw-bold shadow">
+                                    PESAN SEKARANG <i class="bi bi-arrow-right-circle ms-2"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-left" data-aos-delay="200">
+                
+                <div class="card shadow-sm border-0 rounded-4 mb-4" style="background-color: #f0f7f4;">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold text-success mb-4"><i class="bi bi-receipt-cutoff me-2"></i>Ringkasan Biaya</h5>
+                        
+                        <div class="d-flex justify-content-between mb-2 small">
+                            <span class="text-muted">Item:</span>
+                            <span id="summary-alat" class="fw-bold text-end">Belum dipilih</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 small">
+                            <span class="text-muted">Durasi:</span>
+                            <span id="summary-durasi" class="fw-bold text-end">0 Hari</span>
+                        </div>
+                        
+                        <hr style="border-style: dashed;">
+                        
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="text-muted fw-bold">Total Estimasi</span>
+                            <h3 class="fw-bold text-warning mb-0" id="total-harga">Rp 0</h3>
+                        </div>
+                        <p class="small text-muted mt-2 text-center" style="font-size: 0.75rem;">*Pembayaran dilakukan di lokasi basecamp.</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0 rounded-4 bg-white">
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-3"><i class="bi bi-info-circle-fill text-warning me-2"></i>Aturan Penyewaan</h6>
+                        <ul class="text-muted small ps-3 mb-0" style="line-height: 1.8;">
+                            <li>Jaminan asli wajib diserahkan.</li>
+                            <li>Keterlambatan pengembalian dikenakan denda sesuai harga sewa per hari.</li>
+                            <li>Kerusakan atau kehilangan alat menjadi tanggung jawab penuh penyewa.</li>
+                            <li>Pastikan mengecek alat saat pengambilan.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 mt-auto text-center border-top border-secondary">
+        <p class="mb-0 opacity-75">&copy; 2026 UTS Pemrograman Web - MountainGear Rental</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // JS UNTUK KALKULATOR HARGA OTOMATIS
+        document.addEventListener("DOMContentLoaded", function() {
+            const alatSelect = document.getElementById('alat-select');
+            const durasiInput = document.getElementById('durasi-input');
+            const summaryAlat = document.getElementById('summary-alat');
+            const summaryDurasi = document.getElementById('summary-durasi');
+            const totalHargaText = document.getElementById('total-harga');
+
+            function hitungTotal() {
+                // Ambil harga dari value option yang dipilih
+                const hargaPerHari = parseInt(alatSelect.value) || 0;
+                
+                // Ambil teks nama alat (buang bagian harga di kurungnya biar rapi)
+                let namaAlat = "Belum dipilih";
+                if(alatSelect.selectedIndex > 0) {
+                    namaAlat = alatSelect.options[alatSelect.selectedIndex].text.split(' (Rp')[0];
+                }
+
+                // Ambil durasi hari
+                const durasi = parseInt(durasiInput.value) || 0;
+
+                // Update teks di Sidebar
+                summaryAlat.textContent = namaAlat;
+                summaryDurasi.textContent = durasi > 0 ? durasi + " Hari" : "0 Hari";
+
+                // Hitung dan format Total Harga
+                const total = hargaPerHari * durasi;
+                if(total > 0) {
+                    totalHargaText.textContent = "Rp " + total.toLocaleString('id-ID');
+                } else {
+                    totalHargaText.textContent = "Rp 0";
+                }
+            }
+
+            // Jalankan fungsi hitungTotal setiap kali alat dipilih atau durasi diketik
+            alatSelect.addEventListener('change', hitungTotal);
+            durasiInput.addEventListener('input', hitungTotal);
+        });
+    </script>
+</body>
+</html>
